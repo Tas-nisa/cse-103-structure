@@ -1,0 +1,24 @@
+#include<stdio.h>
+struct Emp_info{
+    char employee[25];
+    char address[25];
+    int salary;
+};
+int main(){
+    struct Emp_info a[4];
+    int i,tot=0;
+    float avg;
+    for(i=0;i<4;i++){
+        printf("Enter the name of employee :");
+        scanf("%s",a[i].employee);
+        printf("Enter the address of employee :");
+        scanf("%s",a[i].address);
+        printf("Enter the salary :");
+        scanf("%d",&a[i].salary);
+    }
+    for(i=0;i<4;i++){
+        tot+=a[i].salary;
+    }
+    avg=tot/4;
+    printf("the average salary of employee : %.2f ",avg);
+}
