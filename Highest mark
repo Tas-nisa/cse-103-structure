@@ -1,0 +1,35 @@
+#include<stdio.h>
+struct student_info{
+    char name[25];
+    int roll;
+    float marks;
+};
+int main(){
+    struct student_info a[5];
+    int i,index=0,max;
+    float avg;
+    for(i=0;i<5;i++){
+        printf("Enter the name of student :");
+        scanf("%s",a[i].name);
+        printf("Enter the roll :");
+        scanf("%d",&a[i].roll);
+        printf("Enter marks :");
+        scanf("%f",&a[i].marks);
+    }
+    max=a[0].marks;
+
+    for(i=0;i<5;i++){
+        if(a[i].marks>max){
+            index=i;
+        }
+    }
+    printf("The highest mark obtained \n");
+    printf("%s\nRoll: %d\n",a[index].name,a[index].roll);
+
+    printf("The student that failed");
+    for(i=0;i<5;i++){
+        if(a[i].marks<50)
+            printf("\n%s",a[i].name);
+
+    }
+}
